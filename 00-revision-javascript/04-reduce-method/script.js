@@ -143,73 +143,7 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-// Destructuring
-const book = getBook(1);
-book;
+const books = getBooks();
 
-/* const title = book.title;
-title;
-const author = book.author;
-author;
-const genres = book.genres; 
-
-const book = getBook(2);
-const { title, author, genres } = book;
-book;
-
-console.log(author, title);
-*/
-// Destructuring on arrays
-// const primaryGenre = genres[0];
-// const secondGenre = genres[1];
-
-// const [primaryGenre, secondGenre] = genres;
-
-// Rest: Obter todos os elementos de uma matriz
-const genres = book.genres;
-const [primaryGenre, secondGenre, ...otherGenders] = genres;
-genres;
-otherGenders;
-
-// Spread operator: usar tanto como matriz ou objetos
-// Usar todos os generos e adicionar mais um no elemento do array ou objetos
-const newGenres = [...genres, "epic fantasy"];
-newGenres;
-
-// Para objetos
-const updateBook = { ...book, moviePublicationDate: "2001-12-19", pages: 1560 };
-updateBook;
-
-// Template strings
-const title = book.title;
-const summary = `${title} is a book `;
-summary;
-
-// Ternaries instead of if/else statements
-const pages = book.pages;
-pages;
-pages > 1200 ? "more than a thousand" : "less than a thousand";
-
-// Arrow functions
-const publicationDate = book.publicationDate;
-/* function getYear(str) {
-  return str.split("-")[0];
-}
-console.log(getYear(publicationDate)); */
-
-const getYear = (str) => str.split("-")[0];
-console.log(getYear(publicationDate)); // 1954
-const getMonth = (str) => str.split("-")[1];
-console.log(getMonth(publicationDate));
-
-// Optional Chaining
-
-function getTotalReviewCount(book) {
-  const goodreads = book.reviews.goodreads.reviewsCount;
-  goodreads;
-  const librarything = book.reviews.librarything?.reviewsCount ?? 0;
-  librarything;
-  return goodreads + librarything;
-}
-
-console.log(getTotalReviewCount(book));
+const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
+pagesAllBooks;
