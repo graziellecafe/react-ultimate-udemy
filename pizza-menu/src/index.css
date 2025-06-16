@@ -104,46 +104,72 @@ body {
 
 .pizza {
   display: flex;
-  flex-direction: column; /* adicionado */
-  gap: 1.2rem; /* opcional: pode ajustar o espaçamento */
-  align-items: center; /* centraliza tudo */
-  text-align: center; /* deixa o texto alinhado ao centro */
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff5e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.pizza:hover {
+  background-color: #ffeaa7;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
 }
 
 .pizza img {
-  width: 100%; /* Faz a imagem ocupar toda a largura do card */
-  max-width: 20rem; /* Limita o tamanho máximo */
-  aspect-ratio: 1; /* Mantém formato quadrado */
-  object-fit: cover; /* Garante que a imagem preencha o espaço */
-  border-radius: 8px; /* (Opcional) Deixa as bordas arredondadas */
+  width: 100%;
+  max-width: 20rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.pizza div {
+.pizza-details {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  padding: 0.4rem 0;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.pizza img {
+  width: 12rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .pizza h3 {
   font-size: 2rem;
   font-weight: 400;
+  margin: 0;
 }
 
 .pizza p {
   font-size: 1.4rem;
-  font-weight: 300;
   font-style: italic;
-  margin-bottom: auto;
+  margin: 0;
 }
 
-.pizza span {
-  display: block;
-  font-size: 1.6rem;
+.pizza .price {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
 }
 
 .pizza.sold-out {
   color: #888;
+}
+
+.pizza.sold-out img {
+  filter: grayscale();
+  opacity: 0.8;
 }
 
 .pizza.sold-out img {
