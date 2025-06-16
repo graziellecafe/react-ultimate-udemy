@@ -1,4 +1,4 @@
-import Order from "./Order"; // caminho OK se estiver dentro da mesma pasta base
+import Order from "./Order";
 
 const hour = new Date().getHours();
 const openHour = 12;
